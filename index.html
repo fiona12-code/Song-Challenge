@@ -44,6 +44,13 @@
         cursor: pointer;
       }
 
+      footer {
+        text-align: center;
+        font-style: italic;
+        font-size: 14px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
       .photo {
         display: flex;
         justify-content: center;
@@ -70,37 +77,38 @@
         transform: translateY(25%);
       }
 
+      .song-summary {
+        display: block;
+        margin: 10px 500px;
+        text-align: center;
+        background: #eaf6f6;
+        padding: 5px;
+        border-radius: 20px;
+      }
       .heading-two {
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: translateY(120%);
         color: #070f4e;
       }
-      .song-summary {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        align-items: start;
-        transform: translateY(-80%);
-        background: #eaf6f6;
-        padding: 5px;
-        margin-right: 1080px;
-      }
+
       .grid-box {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 15px;
         margin: 20px;
-        transform: translateY(-80%);
         background-color: #eaf6f6;
         padding: 20px;
         border-radius: 20px;
         box-shadow: 10px 10px 5px grey;
       }
-      .grid-box video {
+      .grid-box iframe {
         width: 100%;
-        height: auto;
+        height: 100%;
+      }
+      .details {
+        background-color: #f7f6e7;
+        padding: 10px;
       }
     </style>
   </head>
@@ -118,24 +126,29 @@
       <p>aka <em> "The Fisherman"</em></p>
     </div>
 
-    <div class="heading-two">
-      <h2>Music video</h2>
-    </div>
-
     <div class="song-summary">
-      <h2>Details</h2>
+      <h3>Details</h3>
       <p>Song: Jowi</p>
       <p>Artist: Coster Ojwang</p>
       <p>Genre: Luo Music</p>
       <p>Language: Luo</p>
       <p>Location: Kenya</p>
-      <p>Year: 2023</p>
+      <p>Release Year: 2024</p>
+    </div>
+
+    <div class="heading-two">
+      <h2>Music video</h2>
     </div>
 
     <div class="grid-box">
-      <video src="Jowi music video.mp4" controls height="400">
-        Jowi by Coster Ojwang
-      </video>
+      <iframe
+        src="https://www.youtube.com/embed/UsMsM_ekJwA"
+        title="01  Coster Ojwang  - JOWI  (lyric video)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
 
       <div class="details">
         <p>
@@ -162,17 +175,15 @@
       </div>
     </div>
 
+    <footer>
+      <p>
+        This page was created by Fiona Atieno, is on github and hosted on
+        Netlify.
+      </p>
+    </footer>
+
     <script>
       window.onload = function () {
-        function changeHeading() {
-          let h2 = document.querySelector("h2");
-          h2.innerHTML =
-            "🎶You are listening to Jowi by Coster Ojwang (The Fisherman)💃🥁";
-        }
-
-        let video = document.querySelector("video");
-        video.addEventListener("click", changeHeading);
-
         function openYouTubeChannel() {
           window.open("https://www.youtube.com/@CosterOjwang", "_blank");
         }
